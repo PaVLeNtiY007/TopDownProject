@@ -16,7 +16,7 @@ AObjectPointer::AObjectPointer()
 void AObjectPointer::BeginPlay()
 {
 	Super::BeginPlay();
-	PointerText->SetText(FText::FromString("Drink Me"));
+	PointerText->SetText(FText::FromString("Hit Me"));
 	
 }
 
