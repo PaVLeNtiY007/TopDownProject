@@ -15,4 +15,9 @@ void UVitalAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute,
     {
         NewValue = FMath::Clamp(NewValue, 0.0f, GetMaxEnergy());
     }
+
+    if (Attribute == GetMoneyAttribute())
+    {
+        NewValue = FMath::Clamp(NewValue, 0.0f, 999999999);
+    }
 }

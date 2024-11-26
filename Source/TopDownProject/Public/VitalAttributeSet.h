@@ -28,6 +28,10 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	FGameplayAttributeData MaxEnergy;
-	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, MaxEnergy); 
+	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, MaxEnergy);
+
+	UPROPERTY(BlueprintReadOnly)
+	FGameplayAttributeData Money;
+	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, Money);
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
 };
