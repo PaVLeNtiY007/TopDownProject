@@ -1,5 +1,3 @@
-// Copyright by GameDone Studio
-
 #include "AbilityInputSubsystem.h"
 #include "Runtime/CoreUObject/Public/UObject/Object.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
@@ -64,3 +62,21 @@ void UAbilityInputSubsystem::InputCompletedAbility(int32 InputID)
 		}
 	}
 }
+
+//void UAbilityInputSubsystem::RebindAllInputs()
+//{
+//	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+//	UEnhancedInputComponent* InputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent);
+//
+//	if (!InputComponent)
+//	{
+//		UE_LOG(LogTemp, Warning, TEXT("EnhancedInputComponent not found."));
+//		return;
+//	}
+//
+//	for (const TPair<UInputAction*, int32>& Pair : InputMapping)
+//	{
+//		InputComponent->BindAction(Pair.Key, ETriggerEvent::Triggered, this, &UAbilityInputSubsystem::InputTriggerAbility, Pair.Value);
+//		InputComponent->BindAction(Pair.Key, ETriggerEvent::Completed, this, &UAbilityInputSubsystem::InputCompletedAbility, Pair.Value);
+//	}
+//}
