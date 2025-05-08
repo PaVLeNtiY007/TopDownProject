@@ -70,8 +70,37 @@ void UAbilityInputSubsystem::InputCompletedAbility(int32 InputID)
 	}
 }
 
+void UAbilityInputSubsystem::RebindAllInputs()
+{
+	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	UEnhancedInputComponent* InputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent);
+	if (!InputComponent)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("EnhancedInputComponent not found."));
+		return;
+	}
 
+	for (const TPair<UInputAction*, int32>& Pair : InputMapping)
+	{
+		UInputAction* Action = Pair.Key;
+		int32 InputID = Pair.Value;
 
+		InputComponent->BindAction(Action, ETriggerEvent::Triggered, FInputActionHandlerSignature::CreateLambda(
+			[this, InputID](const FInputActionInstance& Instance)
+			{
+				InputTriggerAbility(InputID);
+			}
+		));
+
+		InputComponent->BindAction(Action, ETriggerEvent::Completed, FInputActionHandlerSignature::CreateLambda(
+			[this, InputID](const FInputActionInstance& Instance)
+			{
+				InputCompletedAbility(InputID);
+			}
+		));
+
+	}
+}
 
 
 

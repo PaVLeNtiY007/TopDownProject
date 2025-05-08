@@ -19,6 +19,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	int32 GetAbilityInputID(UInputAction* InputAction);
 
+	UFUNCTION(BlueprintCallable)
+	void RebindAllInputs();
+
 private:
 	UFUNCTION()
 	void InputTriggerAbility(int32 InputID);
