@@ -13,17 +13,17 @@
 	"EnabledByDefault": true,
 	"CanContainContent": false,
 	"IsBetaVersion": true,
-	"Installed": false,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "GameplayMessageRuntime",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PreDefault"
 		},
 		{
 			"Name": "GameplayMessageNodes",
 			"Type": "UncookedOnly",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PreDefault"
 		}
 	],
 	"Plugins": [

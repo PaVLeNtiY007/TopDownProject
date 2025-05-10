@@ -10,6 +10,9 @@ public class TopDownProjectTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_4;
-		ExtraModuleNames.Add("TopDownProject");
-	}
+        ExtraModuleNames.AddRange(new string[] {
+            "TopDownProject",
+            "GameplayMessageNodes"
+        });
+    }
 }
