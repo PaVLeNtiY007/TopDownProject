@@ -31,7 +31,16 @@ public:
 	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, MaxEnergy);
 
 	UPROPERTY(BlueprintReadOnly)
+	FGameplayAttributeData AttackSpeed;
+	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, AttackSpeed);
+
+	UPROPERTY(BlueprintReadOnly)
+	FGameplayAttributeData MovementSpeed;
+	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, MovementSpeed);
+
+	UPROPERTY(BlueprintReadOnly)
 	FGameplayAttributeData Money;
 	ATTRIBUTE_ACCESSORS(UVitalAttributeSet, Money);
+
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
 };
