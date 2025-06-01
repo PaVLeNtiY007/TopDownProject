@@ -1,5 +1,3 @@
-// Copyright by GameDone Studio
-
 #include "AbilityInputSubsystem.h"
 #include "Runtime/CoreUObject/Public/UObject/Object.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"

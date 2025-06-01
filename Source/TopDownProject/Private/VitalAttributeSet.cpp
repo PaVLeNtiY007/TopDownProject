@@ -18,6 +18,6 @@ void UVitalAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute,
 
     if (Attribute == GetMoneyAttribute())
     {
-        NewValue = FMath::Clamp(NewValue, 0.0f, 999999999);
+        NewValue = FMath::Clamp(NewValue, 0.0f, 9999);
     }
 }
